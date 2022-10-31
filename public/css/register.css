@@ -1,20 +1,4 @@
-.signin-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 90vh;
-}
-
-.signin-content h2{
-    text-align: center;
-    font-size: 40px;
-}
-
-.signin_form{
-    margin: 30px 0;
-}
-
-.signin_form .input{
+.register_form .input{
     border: 1.5px solid #bcbcbc;
     display: flex;
     align-items: center;
@@ -24,18 +8,18 @@
     margin: 7px 0;
 }
 
-.signin_form .input input{
+.register_form input{
     width: 100%;
     border: 0;
     font-size: 14px;
 }
 
-.signin_form .input i{
+.register_form .input i{
     padding-inline: 5px;
     font-size: 22px;
 }
 
-.signin_form button{
+.register_form button{
     border: 1px solid #722bc2;
     color: #722bc2;
     background: none;
@@ -47,7 +31,7 @@
     cursor: pointer;
 }
 
-.signin_form i{
+.register_form i{
     margin-left: 4px;
 }
 
@@ -71,25 +55,21 @@
     color: #7014e1;
 }
 
-.signin_form button:hover{
+.register_form button:hover{
     transition: .5s;
     background: #722bc2;
     color: #fff;
 }
 
-
-/* Keyframes */
-
-@keyframes error {
-    5%{
-        transform: translateY(2px);
+@media screen and (max-width: 768px) {
+    .register-content {
+        margin: 40px 0;
     }
-    10%{
-        transform: translateY(0);
+    .register_form .input{
+        margin: 20px 0;
     }
-}
-
-/* Solução temporária */
-.search-container-desktop form{
-    display: none;
+    .register_form {
+        padding-inline: 20px !important;
+        margin-bottom: 50px;
+    }
 }
