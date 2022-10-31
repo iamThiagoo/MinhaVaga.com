@@ -1,0 +1,95 @@
+.signin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
+.signin-content h2{
+    text-align: center;
+    font-size: 40px;
+}
+
+.signin_form{
+    margin: 30px 0;
+}
+
+.signin_form .input{
+    border: 1.5px solid #bcbcbc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 7px 0;
+}
+
+.signin_form .input input{
+    width: 100%;
+    border: 0;
+    font-size: 14px;
+}
+
+.signin_form .input i{
+    padding-inline: 5px;
+    font-size: 22px;
+}
+
+.signin_form button{
+    border: 1px solid #722bc2;
+    color: #722bc2;
+    background: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.signin_form i{
+    margin-left: 4px;
+}
+
+.signin-content p{
+    font-size: 15px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.error-msg{
+    display: none;
+    border: 2px solid #ed6b6b;
+    color: #ed6b6b;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px 0 !important;
+    animation: error 2s ease-in-out infinite;
+}
+
+.signin-content p a{
+    color: #7014e1;
+}
+
+.signin_form button:hover{
+    transition: .5s;
+    background: #722bc2;
+    color: #fff;
+}
+
+
+/* Keyframes */
+
+@keyframes error {
+    5%{
+        transform: translateY(2px);
+    }
+    10%{
+        transform: translateY(0);
+    }
+}
+
+/* Solução temporária */
+.search-container-desktop form{
+    display: none;
+}
