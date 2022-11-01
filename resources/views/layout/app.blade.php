@@ -69,6 +69,21 @@
                         <li><a href="#"> Empresas / Anunciar vaga </a></li>
                     </ul>
                 </nav>
+
+                <nav class="menu d-flex align-items-center" id="menu-mobile">
+                    <div class="main-btn">
+                        <a href="{{ route('app.register') }}"> Cadastre-se gratuitamente </a>
+                        <a href="{{ route('app.login') }}"> Entrar </a>
+                    </div>
+                    <div class="menu-section">
+                        <p>MinhaVaga.com</p>
+                        <a href="{{ route('app.help') }}">Ajuda</a>
+                        <a href="#">Ver Vagas</a>
+                        <a href="#">Anunciar vaga</a>
+                    </div>
+                </nav>
+
+                <div class="overlay"></div>
             </header>
 
         {{-- Content --}}
@@ -129,6 +144,34 @@
             <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
             <script>
                 AOS.init();
+
+                $(".menu-btn").on('click', function(e) {
+                    $('#menu-mobile').toggleClass('menu-mobile-active');
+
+                    if($('#menu-mobile').hasClass('menu-mobile-active')){
+                        $('#menu-mobile').attr('style', 'display: flex !important;');
+                        $('#menu-mobile').removeClass('align-items-center');
+                        $('.overlay').css('display', 'block');
+                    }
+                });
+
+                $(".closeMenu").on('click', function(e) {
+                    $('.menu').toggleClass('menu-mobile-active');
+
+                    if(!$('.menu').hasClass('menu-mobile-active')){
+                        $('#menu').attr('style', 'display: none !important;');
+                        $('#menu').addClass('align-items-center');
+                    }
+                });
+
+                $(".overlay").on('click', function(e) {
+                    if($('.menu').hasClass('menu-mobile-active')){
+                        $('#menu-mobile').removeClass('menu-mobile-active');
+                        $('#menu-mobile').hide();
+                        $(".overlay").hide();
+                    }
+                });
+
             </script>
 
             @yield ('script')
