@@ -9,7 +9,7 @@
 
     <div class="register-content container">
         <h2 class="text-center my-4">Cadastro</h2>
-        <form action="#" method="POST" class="register_form">
+        <form action="{{ route('user.create') }}" method="POST" class="register_form">
             @csrf()
 
             <div class="input-name input">

@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,13 +22,17 @@ Route::get('/', [HomeController::class, 'index'])->name('app.home');
 
 Route::fallback( function() {
     return view('layout.not-found');
-});
+})->name("app.not-found");
 
-Route::get('/Help',   function() { return view('help'); })->name("app.help");
 
-Route::get('/Login', [LoginController::class, 'index'])->name("app.login");
+Route::get('/Help', function() {
+    return view('help');
+})->name("app.help");
+
 
 Route::get('/SignUp', [RegisterController::class, 'index'])->name("app.register");
+Route::post('/SignUp', [UserController::class, 'create'])->name('user.create');
 
+Route::get('/Login',  [LoginController::class, 'index'])->name("app.login");
 Route::get('/Search', [SearchController::class, 'index'])->name("app.search");
 
