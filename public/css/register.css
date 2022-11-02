@@ -1,3 +1,21 @@
+.register-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 90vh;
+}
+
+.register-content h2 {
+    font-size: 40px;
+}
+
+.register-content p{
+    font-size: 15px;
+    margin: 10px 0;
+    text-align: center;
+}
+
 .register_form .input{
     border: 1.5px solid #bcbcbc;
     display: flex;
@@ -35,12 +53,6 @@
     margin-left: 4px;
 }
 
-.signin-content p{
-    font-size: 15px;
-    margin: 10px 0;
-    text-align: center;
-}
-
 .error-msg{
     display: none;
     border: 2px solid #ed6b6b;
@@ -64,6 +76,8 @@
 @media screen and (max-width: 768px) {
     .register-content {
         margin: 40px 0;
+        justify-content: flex-start;
+        min-height: 70vh;
     }
     .register_form .input{
         margin: 20px 0;
@@ -71,5 +85,8 @@
     .register_form {
         padding-inline: 20px !important;
         margin-bottom: 50px;
+    }
+    .register-content h2 {
+        font-size: 33px;
     }
 }

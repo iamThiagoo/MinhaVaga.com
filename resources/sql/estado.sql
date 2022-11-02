@@ -2,14 +2,14 @@
 -- Estrutura da tabela "estado"
 --
 
-CREATE TABLE `estado` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(75) DEFAULT NULL,
-  `uf` varchar(2) DEFAULT NULL,
-  `ibge` int(2) DEFAULT NULL,
-  `pais` int(3) DEFAULT NULL,
-  `ddd` varchar(50) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Unidades Federativas';
+-- CREATE TABLE `estado` (
+--   `id` int(11) NOT NULL,
+--   `nome` varchar(75) DEFAULT NULL,
+--   `uf` varchar(2) DEFAULT NULL,
+--   `ibge` int(2) DEFAULT NULL,
+--   `pais` int(3) DEFAULT NULL,
+--   `ddd` varchar(50) DEFAULT NULL
+-- ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Unidades Federativas';
 
 --
 -- Inserindo dados na tabela "estado"

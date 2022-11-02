@@ -13,10 +13,10 @@ class UserController extends Controller
         try {
 
             $data = $request->except('_token');
-            dd($data);
+            dd($data); 
 
         } catch (Exception $e) {
-            throw new Message('Error: ' . $e->getMessage(), 1);
+            throw new Exception('Error: ' . $e->getMessage(), 1);
         }
     }
 

@@ -15,24 +15,24 @@ return new class extends Migration
     {
         Schema::create('vaga', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->char('name', 150);
             $table->text('description');
             $table->float('salary');
 
-            $table->integer('type_id');
+            $table->unsignedBigInteger('type_id');
             $table->foreign('type_id')->references('id')->on('type_job');
 
-            $table->integer('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->delete('cascade');
 
-            $table->integer('cidade_id');
+            $table->unsignedBigInteger('cidade_id');
             $table->foreign('cidade_id')->references('id')->on('cidade');
 
-            $table->integer('estado_id');
+            $table->unsignedBigInteger('estado_id');
             $table->foreign('estado_id')->references('id')->on('estado');
 
-            $table->boolean('vaga_status');
-            $table->timestamps();
+            $table->boolean('status')->default(TRUE);
+            $table->timestampsTz();
         });
     }
 

@@ -137,9 +137,9 @@
                 1000:{
                     items:5,
                     nav:true,
-                    loop:false
+                    loop:true
                 }
             }
         })
     </script>
-@endsection
+@endsection 

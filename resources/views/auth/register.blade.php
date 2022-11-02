@@ -7,8 +7,11 @@
 
 @section("content")
 
-    <div class="register-content container">
-        <h2 class="text-center my-4">Cadastro</h2>
+    <section class="register-content container">
+        <div>
+            <h2 class="text-center my-4">Cadastro</h2>
+            <p class="text-center">Crie o seu perfil gratuitamente e se una a maior plataforma de empregos do Brasil</p>
+        </div>
         <form action="{{ route('user.create') }}" method="POST" class="register_form">
             @csrf()
 
@@ -33,7 +36,7 @@
             e <a href="#">Política de Privacidade</a></p>
             <button type="submit">Criar conta <i class="fa-solid fa-right-to-bracket"></i> </button>
         </form>
-    </div>
+    </section>
 
 @endsection
 

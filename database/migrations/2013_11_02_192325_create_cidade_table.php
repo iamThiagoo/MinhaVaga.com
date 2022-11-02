@@ -13,9 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('type_job', function (Blueprint $table) {
+        Schema::create('cidade', function (Blueprint $table) {
             $table->id();
-            $table->char('name', 50);
+            $table->char('nome', 200);
+
+            $table->unsignedBigInteger('estado_id');
+            $table->foreign('estado_id')->references('id')->on('estado');
+
+            $table->integer('ibge')->unsigned()->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_job');
+        Schema::dropIfExists('cidade');
     }
 };

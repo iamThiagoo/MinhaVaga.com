@@ -97,5 +97,11 @@
 @media screen and (max-width: 768px) {
     .signin-content {
         padding-inline: 20px;
+        margin: 40px 0;
+        justify-content: flex-start;
+        min-height: 70vh;
+    }
+    .signin-content h2 {
+        font-size: 33px;
     }
 }

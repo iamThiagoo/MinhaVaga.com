@@ -15,25 +15,23 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->text('bio');
+            $table->char('name', 150);
+            $table->char('email', 150)->unique();
+            $table->char('phone', 12);
+            $table->text('bio')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->char('cpf', 12);
+            $table->char('cpf', 20)->unique();
             $table->date('birthday');
+            $table->char('slug', 150);
 
-            $table->unsignedInteger('cidade_id');
+            $table->unsignedBigInteger('cidade_id');
             $table->foreign('cidade_id')->references('id')->on('cidade');
-            // $table->foreignId('cidade_id')->constrained('cidade');
 
-            $table->unsignedInteger('estado_id');
+            $table->unsignedBigInteger('estado_id');
             $table->foreign('estado_id')->references('id')->on('estado');
-            // $table->foreignId('estado_id')->constrained('estado');
 
-            $table->boolean('status');
             $table->rememberToken();
-            $table->timestamps();
         });
     }
 
