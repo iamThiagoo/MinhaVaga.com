@@ -1,17 +1,4 @@
 --
--- Estrutura da tabela "estado"
---
-
--- CREATE TABLE `estado` (
---   `id` int(11) NOT NULL,
---   `nome` varchar(75) DEFAULT NULL,
---   `uf` varchar(2) DEFAULT NULL,
---   `ibge` int(2) DEFAULT NULL,
---   `pais` int(3) DEFAULT NULL,
---   `ddd` varchar(50) DEFAULT NULL
--- ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Unidades Federativas';
-
---
 -- Inserindo dados na tabela "estado"
 --
 
@@ -44,10 +31,3 @@ INSERT INTO `estado` (`id`, `nome`, `uf`, `ibge`, `pais`, `ddd`) VALUES
 (26, 'São Paulo', 'SP', 35, 1, '11,12,13,14,15,16,17,18,19'),
 (27, 'Tocantins', 'TO', 17, 1, '63'),
 (99, 'Exterior', 'EX', 99, NULL, NULL);
-
---
--- Indexes for table "estado"
---
-
-ALTER TABLE `estado`
-  ADD PRIMARY KEY (`id`);

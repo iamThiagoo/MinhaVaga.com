@@ -71,7 +71,7 @@ header h1 a:hover{
 
 .search-container-desktop form input{
     border: 0;
-    width: 400px;
+    width: 450px;
     background: none;
 }
 
@@ -232,7 +232,32 @@ footer div .terms > li > a:hover {
     opacity: .8;
 }
 
-@media screen and (max-width: 768px) {
+@media (min-width: 992px) and (max-width: 1300px){
+    header h1 a svg {
+        width: 40px;
+    }
+    header h1 a span {
+        font-size: 15px;
+    }
+    .menu ul {
+        gap: 18px;
+    }
+    .menu ul li a{
+        color: #2a1e47;
+        font-size: 12.6px;
+    }
+    .search-container-desktop form {
+        font-size: 13px;
+    }
+    .search-container-desktop form input{
+        width: 300px;
+    }
+    .search-container-desktop form button i{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 992px) {
     header {
         justify-content: space-between;
         padding: 3px 0;

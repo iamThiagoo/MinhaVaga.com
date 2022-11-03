@@ -31,11 +31,11 @@
         <div class="content">
             <h2 >Últimas vagas anunciadas</h2>
             <p class="last-ads-p">Vagas onde e quando quiser!</p>
-            <div class="my-3 row d-flex">
+            <div class="my-3 gap-3 row d-flex card-container">
 
                 @for($i = 0; $i < 8; $i++)
                     {{-- Card start --}}
-                        <div class="card col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card col-12">
                             <a href="#">
                                 <div class="card-content">
                                     <div class="card-head">
@@ -121,6 +121,9 @@
 @section('script')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
+
+        $('.search-container-desktop').hide();
+
         $('.owl-carousel').owlCarousel({
             loop: true,
             margin: 10,
@@ -141,5 +144,6 @@
                 }
             }
         })
+
     </script>
-@endsection 
+@endsection

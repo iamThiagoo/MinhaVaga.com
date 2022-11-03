@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Factory::create('pt_BR');
+        $faker = Factory::create();
 
         # Will create 10 users
         for($i = 0; $i < 10; $i++) {

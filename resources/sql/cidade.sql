@@ -1,15 +1,4 @@
 --
--- Estrutura da tabela "cidade"
---
-
--- CREATE TABLE `cidade` (
---   `id` int(11) NOT NULL,
---   `nome` varchar(120) DEFAULT NULL,
---   `uf` int(2) DEFAULT NULL,
---   `ibge` int(7) DEFAULT NULL
--- ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Municipios das Unidades Federativas';
-
---
 -- Inserindo dados na tabela "cidade"
 --
 
@@ -5612,10 +5601,3 @@ INSERT INTO `cidade` (`id`, `nome`, `estado_id`, `ibge`) VALUES
 (5608, 'Balneário Rincão', 24, 4220000),
 (5609, 'Pescaria Brava', 24, 4212650),
 (5610, 'Exterior', 99, 9999999);
-
---
--- Indexes for table "cidade"
---
-
-ALTER TABLE `cidade`
-  ADD PRIMARY KEY (`id`);
