@@ -105,11 +105,11 @@
 
             <div>
                 <p class="text-center">Tenha suas vagas divulgadas automaticamente nos melhores indexadores de vagas online</p>
-                <div class="row gap-3">
-                    <div class="col-12 d-flex justify-content-center">
+                <div class="row d-flex my-4 start-btn">
+                    <div class="col-6 d-flex justify-content-end">
                         <a href="#" class="app-link-btn" id="begin-btn">Comece agora</a>
                     </div>
-                    <div class="col-12 d-flex justify-content-center">
+                    <div class="col-6 d-flex justify-content-start">
                         <a href="#" class="app-link-btn">Fale com a nossa equipe</a>
                     </div>
                 </div>

@@ -177,7 +177,7 @@
 
 .app-link-btn {
     color: #7a139d;
-    padding: 0.8em 1.8em;
+    padding: 0.5em 1.8em;
     border: 2px solid #7a139d;
     position: relative;
     overflow: hidden;
@@ -265,6 +265,9 @@
     .banner-content img {
         margin-top: 24px;
     }
+    .about .content .img-container img {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
@@ -287,15 +290,20 @@
     .app-link-btn {
         font-size: 14px;
     }
+
     .about .content {
         flex-direction: column-reverse;
+        padding: 50px 0 10px 0;
     }
     .about .content .img-container img {
-        width: 80%;
-        margin-top: 20px;
+        display: none;
     }
     .about .content .items-list ul li h2 {
         font-size: 18px;
+        text-align: center;
+    }
+    .about .content .items-list ul li p {
+        text-align: center;
     }
     .banner-content img {
         display: none;
@@ -317,5 +325,20 @@
     }
     .search-inputs form input {
         padding: 10px;
+    }
+}
+
+@media screen and (max-width: 535px) {
+    .start-btn {
+        flex-direction: column;
+        align-items: center;
+    }
+    .start-btn div{
+        width: 80%;
+        margin: 10px 0;
+        justify-content: center;
+    }
+    .app-link-btn {
+        width: 100%;
     }
 }
