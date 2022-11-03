@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VagaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +37,4 @@ Route::post('/SignUp', [UserController::class, 'create'])->name('user.create');
 Route::get('/Login',  [LoginController::class, 'index'])->name("app.login");
 Route::get('/Search', [SearchController::class, 'index'])->name("app.search");
 
+Route::get('/vaga/{slug}', [VagaController::class, 'index'])->name("app.vaga");
