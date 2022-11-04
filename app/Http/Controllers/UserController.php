@@ -7,13 +7,17 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-
     public function create(Request $request)
     {
         try {
-
-            $data = $request->except('_token');
-            dd($data); 
+            $validated = $request->validate([
+                'nome'     => 'required|max:150',
+                'birthday' => 'required|date',
+                'email'    => 'required|email',
+                'cpf'      => 'required|max:14',
+                'telefone' => 'required|max:15',
+                'password' => 'required'
+            ]);
 
         } catch (Exception $e) {
             throw new Exception('Error: ' . $e->getMessage(), 1);

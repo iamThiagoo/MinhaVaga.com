@@ -57,14 +57,11 @@
     text-align: center;
 }
 
-.error-msg{
-    display: none;
+.error-msg ul {
     border: 2px solid #ed6b6b;
     color: #ed6b6b;
-    padding: 10px;
+    padding: 10px 20px;
     border-radius: 5px;
-    margin: 20px 0 !important;
-    animation: error 2s ease-in-out infinite;
 }
 
 .signin-content p a{

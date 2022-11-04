@@ -17,11 +17,20 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        $faker = $this->faker;
+
         return [
-            'name' => $this->faker->name(),
-            'email' => $this->faker->unique()->safeEmail(),
+            'name'      => $faker->name(),
+            'email'     => $faker->safeEmail(),
+            'phone'     => $faker->phoneNumberCleared(),
+            'bio'       => $faker->paragraph(3, false),
+            'password'  => $faker->password(),
+            'cpf'       => $faker->cpf(),
+            'birthday'  => $faker->date(),
+            'slug'      => $faker->slug(),
+            'cidade_id' => 3945,  // Caxias do Suk
+            'estado_id' => 23,    // RS
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
         ];
     }
