@@ -27,27 +27,27 @@
             @csrf()
 
             <div class="input-name input">
-                <input type="text" name="name" placeholder="Nome completo" required>
+                <input type="text" name="name" placeholder="Nome completo" {{ old('name') }} required>
                 <i class="fa-solid fa-user"></i>
             </div>
             <div class="input-name input">
-                <input type="text" name="birthday" class="birthday" placeholder="Data de Nascimento" required>
+                <input type="text" name="birthday" class="birthday" placeholder="Data de Nascimento" {{ old('birthday') }} required>
                 <i class="fas fa-birthday-cake"></i>
             </div>
             <div class="input-name input">
-                <input type="email" name="email" placeholder="Email" required>
+                <input type="email" name="email" placeholder="Email" {{ old('email') }} required>
                 <i class="fa-solid fa-envelope"></i>
             </div>
             <div class="input-name input">
-                <input type="text" name="cpf" class="cpf" placeholder="CPF" required>
+                <input type="text" name="cpf" class="cpf" placeholder="CPF" {{ old('cpf') }} required>
                 <i class="fa-solid fa-id-card"></i>
             </div>
             <div class="input-name input">
-                <input type="text" name="telefone" class="telefone" placeholder="Telefone" required>
+                <input type="text" name="telefone" class="telefone" placeholder="Telefone" {{ old('telefone') }} required>
                 <i class="fas fa-phone"></i>
             </div>
             <div class="input-psw input">
-                <input type="password" name="password" placeholder="Senha" required>
+                <input type="password" name="password" placeholder="Senha" {{ old('password') }} required>
                 <i class="fa-solid fa-lock"></i>
             </div>
 

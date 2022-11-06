@@ -25,11 +25,11 @@
             <form action="#" method="POST" class="signin_form">
                 @csrf()
                 <div class="input-name input">
-                    <input type="text" name="psw-signin" placeholder="Usuário ou email" required>
+                    <input type="text" name="email" placeholder="Usuário ou email" value="{{ old('email') }}" required>
                     <i class="fa-solid fa-user"></i>
                 </div>
                 <div class="input-psw input">
-                    <input type="password" name="psw-signin" placeholder="Senha" required>
+                    <input type="password" name="psw" placeholder="Senha" value="{{ old('psw') }}" required>
                     <i class="fa-solid fa-lock"></i>
                 </div>
                 <button type="submit">Entrar <i class="fa-solid fa-right-to-bracket"></i> </button>

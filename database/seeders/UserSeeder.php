@@ -6,7 +6,7 @@ use Faker\Factory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
-use App\Models\UserModel;
+use App\Models\User;
 
 class UserSeeder extends Seeder
 {
@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         # Insert 10 users on DB
-        UserModel::factory(10)->create();
+        User::factory(10)->create();
 
     }
 }
