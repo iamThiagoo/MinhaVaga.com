@@ -46,6 +46,12 @@
                 <input type="text" name="telefone" class="telefone" placeholder="Telefone" {{ old('telefone') }} required>
                 <i class="fas fa-phone"></i>
             </div>
+            <select name="estado" id="estado">
+                <option value="">Selecione o seu estado</option>
+                @foreach (App\Models\Estado::all() as $estado)
+                    <option name="{{ $estado->nome }}" value="{{ $estado->id }}">{{ $estado->nome }}</option>
+                @endforeach
+            </select>
             <div class="input-psw input">
                 <input type="password" name="password" placeholder="Senha" {{ old('password') }} required>
                 <i class="fa-solid fa-lock"></i>
@@ -65,6 +71,11 @@
         $('.cpf').mask('999.999.999-99');
         $('.telefone').mask('(99) 99999-9999');
         $('.birthday').mask('99/99/9999');
+
+        // Ajax para cidade
+        // $.ajax({
+        // });
+
     </script>
 
 @endsection
