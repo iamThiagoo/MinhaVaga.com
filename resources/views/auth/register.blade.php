@@ -46,11 +46,14 @@
                 <input type="text" name="telefone" class="telefone" placeholder="Telefone" {{ old('telefone') }} required>
                 <i class="fas fa-phone"></i>
             </div>
-            <select name="estado" id="estado">
+            <select name="estado" id="estado" required>
                 <option value="">Selecione o seu estado</option>
                 @foreach (App\Models\Estado::all() as $estado)
                     <option name="{{ $estado->nome }}" value="{{ $estado->id }}">{{ $estado->nome }}</option>
                 @endforeach
+            </select>
+            <select name="cidade" id="cidade" disabled required>
+                <option value="">Selecione a sua cidade</option>
             </select>
             <div class="input-psw input">
                 <input type="password" name="password" placeholder="Senha" {{ old('password') }} required>
@@ -72,9 +75,31 @@
         $('.telefone').mask('(99) 99999-9999');
         $('.birthday').mask('99/99/9999');
 
-        // Ajax para cidade
-        // $.ajax({
-        // });
+        $(document).ready(function () {
+
+            // Resgata estado selecionado pelo usuário
+            $('#estado').change(function (event) {
+                let selectCity = $('#cidade');
+                let estadoID = $('#estado').val();
+
+                $(selectCity).prop("disabled", false);
+
+                // Resgata as cidades do estado e insere no select de cidade
+                $.ajax({
+                    type: 'GET',
+                    url:  '{{ url("/cidades/' + estadoID + '") }}',
+                    data: {
+                        estado_id: estadoID
+                    },
+                    dataType: 'json',
+                    success: function(data){
+                        $(data).each(function(index, value) {
+                            selectCity.append('<option name="' + value.nome + '" value="'+ value.id +'"">' + value.nome + '</option>')
+                        });
+                    }
+                })
+            })
+        });
 
     </script>
 

@@ -52,14 +52,14 @@
                     </div>
                 </div>
 
-                <div class="search-container-desktop">
+                {{-- <div class="search-container-desktop">
                     <form action="#" method="POST">
                         <input type="text" id="search-form" placeholder="Pesquisar cargo, competência ou empresa...">
                         <button class="d-flex align-items-center" type="submit">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </form>
-                </div>
+                </div> --}}
 
                 <nav class="menu d-flex align-items-center" id="menu">
                     <ul>

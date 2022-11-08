@@ -12,28 +12,31 @@ class UserController extends Controller
     public function create(Request $request)
     {
         $validated = $request->validate([
-            'name'     => 'required|max:150',
-            'birthday' => 'required|date',
-            'email'    => 'required|email',
-            'cpf'      => 'required|max:14',
-            'telefone' => 'required|max:15',
-            'password' => 'required'
+            'name'      => 'required|max:150',
+            'birthday'  => 'required|date',
+            'email'     => 'required|email',
+            'cpf'       => 'required|max:14',
+            'telefone'  => 'required|max:15',
+            'estado'    => 'required|integer',
+            'cidade'    => 'required|integer',
+            'password'  => 'required',
         ]);
 
         $slug = Str::slug($validated['name'] . "-" . Str::random(10));
 
         $user = User::create([
-            'name'     => $validated['name'],
-            'email'    => $validated['email'],
-            'birthday' => $validated['birthday'],
-            'cpf'      => $validated['cpf'],
-            'phone'    => $validated['telefone'],
-            'password' => $validated['password'],
-            'slug'     => $slug
+            'name'      => $validated['name'],
+            'email'     => $validated['email'],
+            'birthday'  => $validated['birthday'],
+            'cpf'       => $validated['cpf'],
+            'phone'     => $validated['telefone'],
+            'password'  => bcrypt($validated['password']),
+            'cidade_id' => $validated['cidade'],
+            'estado_id' => $validated['estado'],
+            'slug'      => $slug
         ]);
 
         $user->save();
-
     }
 
     public function login(Request $request) {}

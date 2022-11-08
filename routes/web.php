@@ -1,12 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VagaController;
+use App\Models\Cidade;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,4 +39,8 @@ Route::post('/SignUp', [UserController::class, 'create'])->name('user.create');
 Route::get('/Login',  [LoginController::class, 'index'])->name("app.login");
 Route::get('/Search', [SearchController::class, 'index'])->name("app.search");
 
-Route::get('/vaga/{slug}', [VagaController::class, 'index'])->name("app.vaga");
+Route::get('/cidades/{estado_id}', function(Request $request) {
+    $estado_id = $request->estado_id;
+    $cities    = App\Models\Cidade::where('estado_id', "=", $estado_id)->get()->toArray();
+    return response()->json($cities);
+});
