@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use Faker\Factory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Str;
 use App\Models\User;
 
 class UserSeeder extends Seeder

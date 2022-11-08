@@ -22,12 +22,13 @@ class UserController extends Controller
             'password'  => 'required',
         ]);
 
-        $slug = Str::slug($validated['name'] . "-" . Str::random(10));
+        $slug     = Str::slug($validated['name'] . "-" . Str::random(10));
+        $birthday = date("Y-m-d", strtotime($validated['birthday']));
 
         $user = User::create([
             'name'      => $validated['name'],
             'email'     => $validated['email'],
-            'birthday'  => $validated['birthday'],
+            'birthday'  => $birthday,
             'cpf'       => $validated['cpf'],
             'phone'     => $validated['telefone'],
             'password'  => bcrypt($validated['password']),
@@ -37,6 +38,8 @@ class UserController extends Controller
         ]);
 
         $user->save();
+
+        redirect( route("app.create-profile") );
     }
 
     public function login(Request $request) {}
