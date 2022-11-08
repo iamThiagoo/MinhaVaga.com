@@ -51,6 +51,10 @@
     margin-left: 4px;
 }
 
+.input-psw i {
+    cursor: pointer;
+}
+
 .signin-content p{
     font-size: 15px;
     margin: 10px 0;

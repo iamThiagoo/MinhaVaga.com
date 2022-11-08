@@ -30,7 +30,7 @@
                 </div>
                 <div class="input-psw input">
                     <input type="password" name="psw" placeholder="Senha" value="{{ old('psw') }}" required>
-                    <i class="fa-solid fa-lock"></i>
+                    <i class="fa-solid fa-eye-slash eye"></i>
                 </div>
                 <button type="submit">Entrar <i class="fa-solid fa-right-to-bracket"></i> </button>
             </form>
@@ -38,5 +38,28 @@
             <p>Não possui uma conta? <a href="{{ route('app.register') }}">Cadastre-se aqui</a></p>
         </div>
     </section>
+
+@endsection
+
+@section('script')
+
+    <script>
+
+        $('.eye').on('click', function(event) {
+            event.preventDefault();
+
+            if($(this).hasClass('fa-eye-slash')){
+                $(this).removeClass('fa-eye-slash');
+                $(this).addClass('fa-eye');
+                $('.input-psw input').prop('type', 'text');
+
+            } else {
+                $(this).removeClass('fa-eye');
+                $(this).addClass('fa-eye-slash');
+                $('.input-psw input').prop('type', 'password');
+            }
+        });
+
+    </script>
 
 @endsection

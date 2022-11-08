@@ -72,6 +72,10 @@
     margin-left: 4px;
 }
 
+.input-psw i {
+    cursor: pointer;
+}
+
 .error-msg {
     padding-inline: 20px;
 }

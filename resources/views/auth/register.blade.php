@@ -57,7 +57,7 @@
             </select>
             <div class="input-psw input">
                 <input type="password" name="password" placeholder="Senha" {{ old('password') }} required>
-                <i class="fa-solid fa-lock"></i>
+                <i class="fa-solid fa-eye-slash eye"></i>
             </div>
 
             <p>Ao criar conta, você concorda com os nossos <a href="#">Termos de Uso</a>
@@ -77,14 +77,27 @@
 
         $(document).ready(function () {
 
-            // Resgata estado selecionado pelo usuário
+            $('.eye').on('click', function(event) {
+                event.preventDefault();
+
+                if($(this).hasClass('fa-eye-slash')){
+                    $(this).removeClass('fa-eye-slash');
+                    $(this).addClass('fa-eye');
+                    $('.input-psw input').prop('type', 'text');
+
+                } else {
+                    $(this).removeClass('fa-eye');
+                    $(this).addClass('fa-eye-slash');
+                    $('.input-psw input').prop('type', 'password');
+                }
+            });
+
             $('#estado').change(function (event) {
                 let selectCity = $('#cidade');
                 let estadoID = $('#estado').val();
 
                 $(selectCity).prop("disabled", false);
 
-                // Resgata as cidades do estado e insere no select de cidade
                 $.ajax({
                     type: 'GET',
                     url:  '{{ url("/cidades/' + estadoID + '") }}',
