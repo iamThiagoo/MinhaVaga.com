@@ -191,7 +191,7 @@
 }
 
 #begin-btn {
-    animation: btn-animate 5s linear infinite;
+    animation: btn-animate 4s linear infinite;
 }
 
 .app-link-btn::before {

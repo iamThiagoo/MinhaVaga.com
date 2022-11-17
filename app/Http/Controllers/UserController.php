@@ -42,6 +42,10 @@ class UserController extends Controller
         redirect( route("app.create-profile") );
     }
 
+    public function createProfile() {
+        return view("profile.first-profile");
+    }
+
     public function login(Request $request) {}
 
     public function delete(Request $request) {}

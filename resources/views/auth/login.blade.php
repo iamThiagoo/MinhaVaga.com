@@ -22,16 +22,22 @@
                 </div>
             @endif
 
-            <form action="#" method="POST" class="signin_form">
+            <form action="{{ route('app.login') }}" method="POST" class="signin_form">
                 @csrf()
                 <div class="input-name input">
                     <input type="text" name="email" placeholder="Usuário ou email" value="{{ old('email') }}" required>
                     <i class="fa-solid fa-user"></i>
                 </div>
                 <div class="input-psw input">
-                    <input type="password" name="psw" placeholder="Senha" value="{{ old('psw') }}" required>
+                    <input type="password" name="password" placeholder="Senha" value="{{ old('password') }}" required>
                     <i class="fa-solid fa-eye-slash eye"></i>
                 </div>
+                <!-- <div class="checkbox mt-3 mb-2 d-flex align-items-center gap-2">
+                    <label for="remember">
+                        <input type="checkbox" id="remember" name="remember-me">
+                        Lembrar de mim
+                    </label>
+                </div> -->
                 <button type="submit">Entrar <i class="fa-solid fa-right-to-bracket"></i> </button>
             </form>
             <p>Esqueceu sua senha? <a href="#">Clique aqui</a></p>

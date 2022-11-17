@@ -1,0 +1,22 @@
+textarea {
+    padding: 10px;
+    resize: none;
+    border: 1px solid #bcbcbc;
+    border-radius: 5px;
+}
+
+.profile-form button{
+    border: 1px solid #722bc2;
+    color: #722bc2;
+    background: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-inline: 30px;
+    cursor: pointer;
+}
+
+.profile-form i{
+    margin-left: 4px;
+}

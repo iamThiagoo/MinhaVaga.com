@@ -37,7 +37,10 @@ Route::get('/SignUp', [RegisterController::class, 'index'])->name("app.register"
 Route::post('/SignUp', [UserController::class, 'create'])->name('user.create');
 
 Route::get('/Login',  [LoginController::class, 'index'])->name("app.login");
+Route::post('/Login', [LoginController::class, 'store'])->name('app.login');
+
 Route::get('/Search', [SearchController::class, 'index'])->name("app.search");
+Route::get('/profile', [UserController::class, 'createProfile'])->name('app.create-profile');
 
 Route::get('/cidades/{estado_id}', function(Request $request) {
     $estado_id = $request->estado_id;

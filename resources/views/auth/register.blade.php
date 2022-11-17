@@ -62,7 +62,7 @@
 
             <p>Ao criar conta, você concorda com os nossos <a href="#">Termos de Uso</a>
             e <a href="#">Política de Privacidade</a></p>
-            <button type="submit">Criar conta <i class="fa-solid fa-right-to-bracket"></i> </button>
+            <button type="submit">Continuar <i class="fa-solid fa-right-to-bracket"></i> </button>
         </form>
     </section>
 
