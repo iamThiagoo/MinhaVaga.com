@@ -339,6 +339,13 @@
         justify-content: center;
     }
     .app-link-btn {
-        width: 100%;
+        width: 85%;
+        margin: 0 auto;
+    }
+    .owl-item > li > img {
+        margin: 0 auto;
+    }
+    .owl-carousel {
+        padding: 0;
     }
 }
