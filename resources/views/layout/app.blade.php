@@ -70,6 +70,7 @@
                     </ul>
                 </nav>
 
+                @if (auth()->guest())
                 <nav class="menu d-flex align-items-center" id="menu-mobile">
                     <div class="main-btn">
                         <a href="{{ route('app.register') }}"> Cadastre-se gratuitamente </a>
@@ -82,6 +83,9 @@
                         <a href="#">Anunciar vaga</a>
                     </div>
                 </nav>
+                @elseif (auth()->user())
+                    convidado
+                @endif
 
                 <div class="overlay"></div>
             </header>

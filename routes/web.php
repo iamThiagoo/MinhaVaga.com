@@ -22,16 +22,9 @@ use App\Models\Cidade;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('app.home');
+Route::fallback( function() { return view('errors.not-found'); })->name("app.not-found");
 
-Route::fallback( function() {
-    return view('layout.not-found');
-})->name("app.not-found");
-
-
-Route::get('/Help', function() {
-    return view('help');
-})->name("app.help");
-
+Route::get('/Help', function() { return view('help'); })->name("app.help");
 
 Route::get('/SignUp', [RegisterController::class, 'index'])->name("app.register");
 Route::post('/SignUp', [UserController::class, 'create'])->name('user.create');

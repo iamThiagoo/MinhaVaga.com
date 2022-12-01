@@ -21,6 +21,10 @@ class LoginController extends Controller
 
         $logged = Auth::attempt($validated);
 
-        dd($logged);
+        if($logged) {
+            return redirect()->intended('/');
+        } else {
+            return back()->with('Usuário ou Senha inválidos!');
+        }
     }
 }

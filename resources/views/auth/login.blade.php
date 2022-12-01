@@ -23,7 +23,7 @@
             @endif
 
             <form action="{{ route('app.login') }}" method="POST" class="signin_form">
-                @csrf()
+                @csrf
                 <div class="input-name input">
                     <input type="text" name="email" placeholder="Usuário ou email" value="{{ old('email') }}" required>
                     <i class="fa-solid fa-user"></i>
