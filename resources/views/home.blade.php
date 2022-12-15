@@ -17,7 +17,7 @@
                 <div class="search-inputs">
                     <h3>Qual vaga você está procurando? </h3>
                     <p>Ex: Desenvolvedor, Jovem Aprendiz, Analista...</p>
-                    <form action="{{ route('app.search') }}" method="GET">
+                    <form method="GET">
                         <input type="text" name="search-banner" id="search-banner" placeholder="Insira a vaga que procura..." required>
                         <button type="submit"><i class="fa-solid fa-magnifying-glass"></i> Buscar vagas</button>
                     </form>

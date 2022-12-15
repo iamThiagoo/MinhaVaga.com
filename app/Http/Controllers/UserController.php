@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
 class UserController extends Controller
@@ -13,16 +14,15 @@ class UserController extends Controller
     {
         $validated = $request->validate([
             'name'      => 'required|max:150',
-            'birthday'  => 'required|date',
-            'email'     => 'required|email',
-            'cpf'       => 'required|max:14',
+            'birthday'  => 'required|date|before: 14 years ago',
+            'email'     => 'required|email|unique:users',
+            'cpf'       => 'required|max:14|unique:users',
             'telefone'  => 'required|max:15',
             'estado'    => 'required|integer',
             'cidade'    => 'required|integer',
             'password'  => 'required',
         ]);
 
-        $slug     = Str::slug($validated['name'] . "-" . Str::random(10));
         $birthday = date("Y-m-d", strtotime($validated['birthday']));
 
         $user = User::create([
@@ -34,19 +34,14 @@ class UserController extends Controller
             'password'  => bcrypt($validated['password']),
             'cidade_id' => $validated['cidade'],
             'estado_id' => $validated['estado'],
-            'slug'      => $slug
+            'slug'      => Str::slug($validated['name'] . "-" . Str::random(10))
         ]);
 
         $user->save();
 
-        redirect( route("app.create-profile") );
+        Auth::login($user);
+        return redirect(route('app.create.profile'));
     }
-
-    public function createProfile() {
-        return view("profile.first-profile");
-    }
-
-    public function login(Request $request) {}
 
     public function delete(Request $request) {}
 

@@ -17,6 +17,14 @@
     text-align: center;
 }
 
+.register_form p:not(.link-termos-register) {
+    text-align: left;
+    padding: 10px;
+    color: #ff4646;
+    background: #ffdddd;
+    border-radius: 5px;
+}
+
 .register_form .input{
     border: 1.5px solid #bcbcbc;
     display: flex;

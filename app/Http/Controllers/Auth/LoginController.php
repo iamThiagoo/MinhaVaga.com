@@ -24,7 +24,12 @@ class LoginController extends Controller
         if($logged) {
             return redirect()->intended('/');
         } else {
-            return back()->with('Usuário ou Senha inválidos!');
+            return redirect()->back()->with('user_not_logged', 'Usuário ou Senha inválidos!');
         }
+    }
+
+    public function logout(Request $request) {
+        Auth::logout();
+        return redirect("/");
     }
 }

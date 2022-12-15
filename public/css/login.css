@@ -14,6 +14,14 @@
     margin: 30px 0;
 }
 
+.inputs > p {
+    padding: 10px;
+    color: #ff4646;
+    background: #ffdddd;
+    border-radius: 5px;
+    margin-bottom: 10px !important;
+}
+
 .signin_form .input{
     border: 1.5px solid #bcbcbc;
     display: flex;

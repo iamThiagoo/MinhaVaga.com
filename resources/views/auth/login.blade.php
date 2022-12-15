@@ -12,32 +12,30 @@
             <h2> Login </h2>
             <p> Simplesmente a maior plataforma de vagas de empregos do Brasil! </p>
 
-            @if ($errors->any())
-                <div class="w-100 error-msg">
-                    <ul class="w-100 my-3">
-                        @foreach ($errors->all() as $error)
-                            <li class="text-center"> {{ $error }} </li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-
             <form action="{{ route('app.login') }}" method="POST" class="signin_form">
                 @csrf
-                <div class="input-name input">
-                    <input type="text" name="email" placeholder="Usuário ou email" value="{{ old('email') }}" required>
-                    <i class="fa-solid fa-user"></i>
+                <div class="inputs">
+                    @error('email')
+                        <p style="margin-top: -20px">{{ $message }}</p>
+                    @enderror
+
+                    @if(session('user_not_logged'))
+                        <p style="margin-top: -20px">{{ session('user_not_logged') }}</p>
+                    @endif
+                    <div class="input-name input">
+                        <input type="text" name="email" placeholder="Usuário ou email" value="{{ old('email') }}" required>
+                        <i class="fa-solid fa-user"></i>
+                    </div>
                 </div>
-                <div class="input-psw input">
-                    <input type="password" name="password" placeholder="Senha" value="{{ old('password') }}" required>
-                    <i class="fa-solid fa-eye-slash eye"></i>
+                <div class="inputs">
+                    @error('password')
+                        <p>{{ $message }}</p>
+                    @enderror
+                    <div class="input-psw input">
+                        <input type="password" name="password" placeholder="Senha" value="{{ old('password') }}" required>
+                        <i class="fa-solid fa-eye-slash eye"></i>
+                    </div>
                 </div>
-                <!-- <div class="checkbox mt-3 mb-2 d-flex align-items-center gap-2">
-                    <label for="remember">
-                        <input type="checkbox" id="remember" name="remember-me">
-                        Lembrar de mim
-                    </label>
-                </div> -->
                 <button type="submit">Entrar <i class="fa-solid fa-right-to-bracket"></i> </button>
             </form>
             <p>Esqueceu sua senha? <a href="#">Clique aqui</a></p>

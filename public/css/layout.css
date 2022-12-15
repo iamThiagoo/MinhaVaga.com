@@ -116,6 +116,53 @@ header h1 a:hover{
     display: none !important;
 }
 
+.user-menu-mobile {
+    display: flex;
+    background-color: #150d2b;
+    margin-inline: 0;
+    padding: 20px 0;
+}
+
+.user-menu-mobile > .img-user-menu {
+    width: 53px;
+    height: 53px;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+
+.user-info-menu-mobile {
+    margin: 0;
+    padding: 0;
+    width: 70%;
+}
+
+.user-info-menu-mobile h2 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.user-info-menu-mobile p {
+    font-size: 12px;
+    margin: 0;
+}
+
+.report-error-link {
+    font-size: 11px;
+    margin-left: 10px;
+}
+
+.logout-mobile-btn {
+    color: #5719fd;
+    padding: 6px;
+    font-size: 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.logout-mobile-btn:hover {
+    opacity: .8;
+}
+
 .main-btn {
     display: flex;
     flex-direction: column;

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class VagaController extends Controller
 {
-    public function index($slug){
-        return view('home');
+    public function index(){
+        return view('vaga.vaga');
     }
 }

@@ -1,22 +1,109 @@
-textarea {
-    padding: 10px;
-    resize: none;
-    border: 1px solid #bcbcbc;
-    border-radius: 5px;
+.profile-container {
+    padding: 70px 0 0px 0;
+    min-height: 79vh;
+}
+
+.profile-container h2 {
+    line-height: 1.5;
+}
+
+.profile-form {
+    margin: 0 auto;
+    gap: 50px;
+}
+
+.img-profile {
+    height: 150px;
+}
+
+.user-photo {
+    border-radius: 50%;
+}
+
+.img-profile > * {
+    cursor: pointer;
+}
+
+.img-profile p {
+    position: absolute;
+    margin-top: 50px;
+}
+
+.profile-container h2 {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+/* Start -Made by @alexruix */
+.input-group > label {
+    display: block;
+    margin-top: .2rem;
+    font-size: .9rem;
+    font-weight: bold;
+    color: #05060f99;
+    transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
+}
+
+.input-group > input {
+    height: 44px;
+    background-color: #05060f0a;
+    border-radius: .5rem !important;
+    padding: 0 1rem;
+    border: 2px solid transparent;
+    font-size: 1rem;
+    transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+}
+
+.input-group > textarea {
+    width: 100%;
+    min-height: 100px;
+    background-color: #05060f0a;
+    border-radius: .5rem !important;
+    padding: 1rem;
+    border: 2px solid transparent;
+    font-size: .9rem;
+    transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+}
+
+
+.input-group input:hover, .input-group input:focus, .input-group:hover input,
+.input-group > textarea:hover, .input-group > textarea:focus, .input-group:hover > textarea
+{
+    outline: none;
+    border-color: #05060f;
+}
+
+.input-group:hover label, .input-group label:focus {
+    color: #05060fc2;
+}
+/* End */
+
+.user-photo {
+    cursor: pointer;
+}
+
+.camera-img-icon i {
+    font-size: 23px;
 }
 
 .profile-form button{
-    border: 1px solid #722bc2;
+    border: 2px solid #722bc2;
     color: #722bc2;
     background: none;
     width: 100%;
     padding: 10px;
     font-size: 18px;
     border-radius: 10px;
-    margin-inline: 30px;
     cursor: pointer;
+    transition: .7s;
 }
 
 .profile-form i{
     margin-left: 4px;
+}
+
+.profile-form button:hover {
+    background: #722bc2;
+    color: #fff;
+    border: 2px solid #4a009d;
 }

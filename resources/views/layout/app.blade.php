@@ -64,28 +64,61 @@
                 <nav class="menu d-flex align-items-center" id="menu">
                     <ul>
                         <li><a href="{{ route('app.home') }}"> Início </a></li>
-                        <li><a href="{{ route('app.help') }}"> Ajuda </a></li>
+                        <li><a href="#"> Ajuda </a></li>
                         <li><a href="{{ route('app.login') }}"> Entrar </a></li>
                         <li><a href="#"> Empresas / Anunciar vaga </a></li>
                     </ul>
                 </nav>
 
-                @if (auth()->guest())
                 <nav class="menu d-flex align-items-center" id="menu-mobile">
+                    @auth
+                        <div class="user-menu-mobile">
+                            <div class="img-user-menu">
+                                <img src="">
+                            </div>
+                            <div class="user-info-menu-mobile d-flex flex-column align-items-start">
+                                <h2 class="text-white">Thiago Ferreira</h2>
+                                <p class="text-white">thiago@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="menu-user-section menu-section w-100">
+                            <p>
+                                @if (date('H') >= 6 && date('H') <= 12)
+                                    Bom dia
+                                @elseif (date('H') > 12 && date('H') <= 18)
+                                    Boa tarde
+                                @else
+                                    Boa noite
+                                @endif
+                                Thiago, o que você deseja fazer?
+                            </p>
+                            <a href="#">Acessar meu perfil</a>
+                            <a href="#">Ver minhas candidaturas</a>
+                            <a href="#">Ir para minhas conversas</a>
+                        </div>
+                    @endauth
+
                     <div class="main-btn">
                         <a href="{{ route('app.register') }}"> Cadastre-se gratuitamente </a>
                         <a href="{{ route('app.login') }}"> Entrar </a>
                     </div>
                     <div class="menu-section">
                         <p>MinhaVaga.com</p>
-                        <a href="{{ route('app.help') }}">Ajuda</a>
+                        <a href="#">Ajuda</a>
                         <a href="#">Ver Vagas</a>
                         <a href="#">Anunciar vaga</a>
                     </div>
+
+                    @auth
+                        <div class="w-100 d-flex justify-content-between">
+                            <a href="#" class="report-error-link">Reportar erro</a>
+                            <a href="{{ route('app.logout') }}" class="logout-mobile-btn">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                Sair
+                            </a>
+                        </div>
+                    @endauth
                 </nav>
-                @elseif (auth()->user())
-                    convidado
-                @endif
 
                 <div class="overlay"></div>
             </header>
