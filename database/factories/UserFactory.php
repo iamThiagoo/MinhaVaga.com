@@ -32,6 +32,7 @@ class UserFactory extends Factory
             'estado_id' => 23,    // RS
             'email_verified_at' => now(),
             'remember_token' => Str::random(10),
+            'create_profile' => true
         ];
     }
 

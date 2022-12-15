@@ -34,7 +34,8 @@ class UserController extends Controller
             'password'  => bcrypt($validated['password']),
             'cidade_id' => $validated['cidade'],
             'estado_id' => $validated['estado'],
-            'slug'      => Str::slug($validated['name'] . "-" . Str::random(10))
+            'slug'      => Str::slug($validated['name'] . "-" . Str::random(10)),
+            'create_profile' => false
         ]);
 
         $user->save();

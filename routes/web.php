@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Cidade;
 
 # Get cities and states when necessary, like register and edit profile
@@ -42,8 +43,16 @@ Route::name('app.')->group( function () {
             return view('user.edit_profile.blade');
         })->name('edit-profile');
 
-        Route::get('/create-profile', function () {
-            return view('user.profile');
+        Route::get('/create-profile', function (Request $request) {
+            $user = Auth::user();
+
+            // If already create profile, return "not found" view
+            if(!$user->create_profile) {
+                return view('user.profile', ['user' => $user]);
+            } else {
+                return route('not-found');
+            }
+
         })->name('create.profile');
 
     });
