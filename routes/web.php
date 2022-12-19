@@ -45,10 +45,11 @@ Route::name('app.')->group( function () {
 
         Route::get('/create-profile', function (Request $request) {
             $user = Auth::user();
+            $array_name = explode(" ", $user->name);
 
             // If already create profile, return "not found" view
             if(!$user->create_profile) {
-                return view('user.profile', ['user' => $user]);
+                return view('user.profile', ['user' => $user, 'firstname' => $array_name[0]]);
             } else {
                 return route('not-found');
             }

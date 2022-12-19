@@ -73,12 +73,12 @@
                 <nav class="menu d-flex align-items-center" id="menu-mobile">
                     @auth
                         <div class="user-menu-mobile">
-                            <div class="img-user-menu">
-                                <img src="">
+                            <div class="d-flex justify-content-center img-user-menu">
+                                <img src="{{ asset('images/static/user.png') }}">
                             </div>
                             <div class="user-info-menu-mobile d-flex flex-column align-items-start">
-                                <h2 class="text-white">Thiago Ferreira</h2>
-                                <p class="text-white">thiago@gmail.com</p>
+                                <h2 class="text-white">{{ $user->name }}</h2>
+                                <p class="text-white">{{ $user->email }}</p>
                             </div>
                         </div>
                         <div class="menu-user-section menu-section w-100">
@@ -90,7 +90,7 @@
                                 @else
                                     Boa noite
                                 @endif
-                                Thiago, o que você deseja fazer?
+                                {{ $firstname }}, o que você deseja fazer?
                             </p>
                             <a href="#">Acessar meu perfil</a>
                             <a href="#">Ver minhas candidaturas</a>
@@ -98,16 +98,18 @@
                         </div>
                     @endauth
 
-                    <div class="main-btn">
-                        <a href="{{ route('app.register') }}"> Cadastre-se gratuitamente </a>
-                        <a href="{{ route('app.login') }}"> Entrar </a>
-                    </div>
-                    <div class="menu-section">
-                        <p>MinhaVaga.com</p>
-                        <a href="#">Ajuda</a>
-                        <a href="#">Ver Vagas</a>
-                        <a href="#">Anunciar vaga</a>
-                    </div>
+                    @guest
+                        <div class="main-btn overflow-auto">
+                            <a href="{{ route('app.register') }}"> Cadastre-se gratuitamente </a>
+                            <a href="{{ route('app.login') }}"> Entrar </a>
+                        </div>
+                        <div class="menu-section">
+                            <p>MinhaVaga.com</p>
+                            <a href="#">Ajuda</a>
+                            <a href="#">Ver Vagas</a>
+                            <a href="#">Anunciar vaga</a>
+                        </div>
+                    @endguest
 
                     @auth
                         <div class="w-100 d-flex justify-content-between">
@@ -130,7 +132,7 @@
             <footer>
                 <div class="container">
                     <div class="py-3 mb-3 d-flex justify-content-between align-items-center">
-                        <a href="/" class="d-flex align-items-center justify-content-center">
+                        <a href="/" class="d-flex align-items-center justify-content-center footer-logo">
                             <svg version="1.1" viewBox="0 0 240 240" width="50px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title/><desc/><g fill="none" fill-rule="evenodd" id="suitcase" stroke="none" stroke-width="1"><g id="bounding-box"><polygon id="shape" points="0 0 240 0 240 240 0 240"/></g><path d="M200,80 L200,130 L135,130 L135,124 C135,119.665086 131.552162,116.135457 127.249179,116.003807 L127,116 L113,116 C108.581722,116 105,119.581722 105,124 L105,124 L105,130 L40,130 L40,80 L200,80 Z" fill="#8760996b" id="Combined-Shape"/><rect height="120" id="Rectangle" rx="15" stroke="#a20069" stroke-width="10" width="170" x="35" y="75"/><line id="Line-2-Copy" stroke="#a20069" stroke-linecap="square" stroke-width="10" x1="137" x2="202" y1="135" y2="135"/><rect height="29" id="button" rx="8" stroke="#a20069" stroke-width="10" width="20" x="110" y="121"/><line id="Line-2" stroke="#a20069" stroke-linecap="square" stroke-width="10" x1="40" x2="105" y1="135" y2="135"/><rect height="20" id="Rectangle" rx="8" stroke="#a20069" stroke-width="10" width="70" x="85" y="55"/></g></svg>
                             <span style="color: #ccc; margin-top: 8px !important"> MinhaVaga.com </span>
                         </a>
@@ -166,10 +168,8 @@
                         <li>
                             <a href="#">Fale conosco</a>
                         </li>
-                        <li>
-                            <p href="#">&copy; 2022 - MinhaVaga | Todos os direitos reservados.</p>
-                        </li>
                     </ul>
+                    <p class="footer-link" href="#">&copy; 2022 - MinhaVaga | Todos os direitos reservados.</p>
                 </div>
             </footer>
 
@@ -208,6 +208,10 @@
                         $(".overlay").hide();
                     }
                 });
+
+                if($(window).width() <= 992) {
+                    $('.terms').removeClass('d-flex');
+                }
 
             </script>
 

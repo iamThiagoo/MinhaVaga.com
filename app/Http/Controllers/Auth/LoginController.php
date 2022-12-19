@@ -20,9 +20,11 @@ class LoginController extends Controller
         ]);
 
         $logged = Auth::attempt($validated);
+        $user = Auth::user();
+        $array_name = explode(" ", $user->name);
 
         if($logged) {
-            return redirect()->intended('/');
+            return redirect()->intended('/', ['user' => $user, 'firstname' => $array_name[0]]);
         } else {
             return redirect()->back()->with('user_not_logged', 'Usuário ou Senha inválidos!');
         }

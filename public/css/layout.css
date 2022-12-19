@@ -27,6 +27,10 @@ a:active{
     color: #46aaf7;
 }
 
+.mb-7 {
+    margin-bottom: 70px;
+}
+
 /* Header */
 header{
     background: #fff;
@@ -123,7 +127,7 @@ header h1 a:hover{
     padding: 20px 0;
 }
 
-.user-menu-mobile > .img-user-menu {
+.user-menu-mobile > .img-user-menu img {
     width: 53px;
     height: 53px;
     border-radius: 50%;
@@ -269,7 +273,7 @@ footer{
     margin-bottom: 0 !important;
 }
 
-footer div .terms > li > * {
+footer div .terms > li > *, .footer-link {
     color: #ccc;
     margin: 0;
     font-size: 13px;
@@ -277,6 +281,23 @@ footer div .terms > li > * {
 
 footer div .terms > li > a:hover {
     opacity: .8;
+}
+
+@media screen and (max-width: 992px) {
+    .terms {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+    }
+    .footer-link {
+        margin: 35px 10px 0 10px;
+    }
+    .footer div div:first-child {
+        padding-bottom: 10px !important;
+        padding-top: 25px !important;
+    }
+    .footer-logo {
+        padding: 10px 0 5px 0;
+    }
 }
 
 @media (min-width: 992px) and (max-width: 1300px){

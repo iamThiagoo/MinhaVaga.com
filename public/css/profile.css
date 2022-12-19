@@ -18,6 +18,7 @@
 
 .user-photo {
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .img-profile > * {
@@ -46,7 +47,7 @@
 
 .input-group > input {
     height: 44px;
-    background-color: #05060f0a;
+    background-color: #e5e6e7;
     border-radius: .5rem !important;
     padding: 0 1rem;
     border: 2px solid transparent;
@@ -57,7 +58,7 @@
 .input-group > textarea {
     width: 100%;
     min-height: 100px;
-    background-color: #05060f0a;
+    background-color: #e5e6e7;
     border-radius: .5rem !important;
     padding: 1rem;
     border: 2px solid transparent;
@@ -86,7 +87,7 @@
     font-size: 23px;
 }
 
-.profile-form button{
+.profile-form button {
     border: 2px solid #722bc2;
     color: #722bc2;
     background: none;
@@ -106,4 +107,37 @@
     background: #722bc2;
     color: #fff;
     border: 2px solid #4a009d;
+}
+
+
+@media screen and (max-width: 568px) {
+
+    .profile-container {
+        padding: 40px 0 0 0;
+    }
+    .profile-form {
+        flex-direction: column !important;
+        gap: 0;
+    }
+    .profile-container h2 {
+        padding: 10px;
+        font-size: 20px;
+    }
+    .create-profile-text {
+        font-size: 13.5px;
+        margin: 0 !important;
+    }
+    .input-group, .profile-form button {
+        max-width: 90% !important;
+        margin: 0 auto;
+    }
+    .input-group > input {
+        width: 100%;
+    }
+    .input-group > input, .input-group > textarea {
+        background-color: #e5e6e7;
+    }
+    .support-text {
+        font-size: 13px;
+    }
 }

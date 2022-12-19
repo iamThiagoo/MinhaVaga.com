@@ -19,7 +19,7 @@ return new class extends Migration
             $table->char('email', 150)->unique();
             $table->char('phone', 20);
             $table->text('bio')->nullable();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('user_photo')->nullable();
             $table->string('password');
             $table->char('cpf', 20)->unique();
             $table->date('birthday');
@@ -32,7 +32,7 @@ return new class extends Migration
             $table->foreign('estado_id')->references('id')->on('estado');
 
             $table->boolean('create_profile')->default(false);
-
+            $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
         });
     }
