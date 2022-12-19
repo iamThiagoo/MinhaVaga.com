@@ -13,18 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('experiencias', function (Blueprint $table) {
+        Schema::create('empresas', function (Blueprint $table) {
             $table->id();
-
             $table->char('name', 200);
-            $table->date('initial_date');
-            $table->date('final_date');
+            $table->text('bio')->nullable();
+            $table->char('cnpj/cpf', 25);
+            $table->char('phone', 20);
+            $table->string('empresa_photo')->nullable();;
 
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('email');
+            $table->string('password');
 
-            $table->unsignedBigInteger('empresa_id');
-            $table->foreign('empresa_id')->references('id')->on('empresa');
+            $table->char('empresa_slug', 150);
 
             $table->unsignedBigInteger('cidade_id');
             $table->foreign('cidade_id')->references('id')->on('cidade');
@@ -32,9 +32,7 @@ return new class extends Migration
             $table->unsignedBigInteger('estado_id');
             $table->foreign('estado_id')->references('id')->on('estado');
 
-            $table->text('funcao')->nullable();
-            $table->boolean('status')->default(true);
-
+            $table->boolean('status');
             $table->timestamps();
         });
     }
@@ -46,6 +44,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('experiencias');
+        Schema::dropIfExists('table_empresas');
     }
 };
