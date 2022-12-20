@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('formacao_user', function (Blueprint $table) {
+        Schema::create('certificados_user', function (Blueprint $table) {
             $table->id();
             $table->char('name', 200);
-            $table->text('descricao');
 
             $table->unsignedBigInteger('instituicao_id');
             $table->foreign('instituicao_id')->references('id')->on('instituicoes');
@@ -24,13 +23,8 @@ return new class extends Migration
             $table->date('initial_date');
             $table->date('final_date');
 
-            $table->float('nota');
-
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-
-            $table->unsignedBigInteger('formacao_status_id');
-            $table->foreign('formacao_status_id')->references('id')->on('formacao_status');
+            $table->char('code_certificado', 150);
+            $table->string('url_certificado');
 
             $table->boolean('status');
             $table->timestamps();
@@ -44,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('formacao_user');
+        Schema::dropIfExists('certificados_user');
     }
 };

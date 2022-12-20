@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
 
             $table->unsignedBigInteger('idioma_id');
-            $table->foreign('empresa_id')->references('id')->on('empresas');
+            $table->foreign('idioma_id')->references('id')->on('idiomas');
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
@@ -27,7 +27,7 @@ return new class extends Migration
 
             $table->boolean('status');
             $table->timestamps();
-        });
+        }); 
     }
 
     /**

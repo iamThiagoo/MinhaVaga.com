@@ -13,14 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('competencias_user', function (Blueprint $table) {
+        Schema::create('instituicoes', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
 
-            $table->unsignedBigInteger('competencia_id');
-            $table->foreign('competencia_id')->references('id')->on('competencias');
+            $table->unsignedBigInteger('cidade_id');
+            $table->foreign('cidade_id')->references('id')->on('cidade');
 
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('estado_id');
+            $table->foreign('estado_id')->references('id')->on('estado');
 
             $table->boolean('status');
             $table->timestamps();
@@ -34,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('competencias_user');
+        Schema::dropIfExists('instituicoes');
     }
 };

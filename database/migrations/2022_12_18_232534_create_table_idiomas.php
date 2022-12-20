@@ -13,15 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('competencias_user', function (Blueprint $table) {
+        Schema::create('idiomas', function (Blueprint $table) {
             $table->id();
-
-            $table->unsignedBigInteger('competencia_id');
-            $table->foreign('competencia_id')->references('id')->on('competencias');
-
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-
+            $table->char('name', 100);
             $table->boolean('status');
             $table->timestamps();
         });
@@ -34,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('competencias_user');
+        Schema::dropIfExists('idiomas');
     }
 };
