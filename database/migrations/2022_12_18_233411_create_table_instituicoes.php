@@ -16,14 +16,7 @@ return new class extends Migration
         Schema::create('instituicoes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-
-            $table->unsignedBigInteger('cidade_id');
-            $table->foreign('cidade_id')->references('id')->on('cidade');
-
-            $table->unsignedBigInteger('estado_id');
-            $table->foreign('estado_id')->references('id')->on('estado');
-
-            $table->boolean('status');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }
