@@ -17,12 +17,12 @@ return new class extends Migration
             $table->id();
             $table->char('name', 200);
 
-            $table->boolean('created_by_user');
+            $table->boolean('created_by_user')->default(false);
 
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('created_user_id')->nullable();
+            $table->foreign('created_user_id')->references('id')->on('users');
 
-            $table->boolean('status');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

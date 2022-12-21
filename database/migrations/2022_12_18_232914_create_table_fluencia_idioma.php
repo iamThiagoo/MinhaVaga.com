@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('fluencia_idioma', function (Blueprint $table) {
             $table->id();
             $table->char('name', 50);
-            $table->boolean('status');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

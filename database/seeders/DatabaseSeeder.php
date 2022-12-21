@@ -19,7 +19,10 @@ class DatabaseSeeder extends Seeder
             CidadeSeeder::class,
             UserSeeder::class,
             IdiomaSeeder::class,
-            InstituicaoSeeder::class
+            InstituicaoSeeder::class,
+            TypeJobSeeder::class,
+            FluenciaIdiomaSeeder::class,
+            CompetenciaSeeder::class
         ]);
     }
 }

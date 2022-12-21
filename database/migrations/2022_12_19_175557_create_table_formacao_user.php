@@ -29,11 +29,8 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
 
-            $table->unsignedBigInteger('formacao_status_id');
-            $table->foreign('formacao_status_id')->references('id')->on('formacao_status');
-
             $table->boolean('status');
-            $table->timestamps();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 
