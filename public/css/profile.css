@@ -36,7 +36,7 @@
 }
 
 /* Start -Made by @alexruix */
-.input-group > label {
+.input-group > label, .btn-add-group > p {
     display: block;
     margin-top: .2rem;
     font-size: .9rem;
@@ -107,6 +107,22 @@
     background: #722bc2;
     color: #fff;
     border: 2px solid #4a009d;
+}
+
+.btn-add-group {
+    border-bottom: 1px solid #93949d99;
+    margin: 10px 0 15px 0;
+    cursor: pointer;
+}
+
+.btn-add-group > p {
+    font-size: 19px;
+    margin: 5px;
+}
+
+.btn-add-group:hover {
+    opacity: .6;
+    transition: .6s;
 }
 
 

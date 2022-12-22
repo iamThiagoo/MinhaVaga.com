@@ -279,6 +279,10 @@ footer div .terms > li > *, .footer-link {
     font-size: 13px;
 }
 
+.footer-link {
+    margin-top: 45px;
+}
+
 footer div .terms > li > a:hover {
     opacity: .8;
 }
