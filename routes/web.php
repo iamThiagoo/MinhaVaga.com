@@ -55,6 +55,5 @@ Route::name('app.')->group( function () {
             }
 
         })->name('create.profile');
-
     });
 });

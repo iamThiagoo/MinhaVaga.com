@@ -44,7 +44,8 @@ class UserController extends Controller
         return redirect(route('app.create.profile'));
     }
 
+    public function edit(Request $request) {}
+
     public function delete(Request $request) {}
 
-    public function edit(Request $request) {}
 }
