@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ExperienceController;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Cidade;
 
@@ -55,5 +56,7 @@ Route::name('app.')->group( function () {
             }
 
         })->name('create.profile');
+
+        Route::post('/create-experience', [ExperienceController::class, 'create'])->name('create.experience');
     });
 });

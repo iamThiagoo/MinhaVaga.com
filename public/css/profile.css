@@ -109,6 +109,10 @@
     border: 2px solid #4a009d;
 }
 
+.date-experience {
+    display: flex;
+}
+
 .btn-add-group {
     border-bottom: 1px solid #93949d99;
     margin: 10px 0 15px 0;
@@ -123,6 +127,10 @@
 .btn-add-group:hover {
     opacity: .6;
     transition: .6s;
+}
+
+.current-work-container {
+    padding-left: 5px;
 }
 
 
@@ -171,5 +179,17 @@
     }
     .date-experience {
         display: block !important;
+    }
+    .date-experience > div:first-of-type {
+        margin-bottom: 25px;
+    }
+    .current-work-container {
+        padding-left: 20px !important;
+    }
+    .current-work-container label {
+        font-size: 14px !important;
+    }
+    .modal-header {
+        padding: 17px 25px 12px 20px !important;
     }
 }
