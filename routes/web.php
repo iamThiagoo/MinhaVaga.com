@@ -8,12 +8,13 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ExperienceController;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Cidade;
+use App\Models\Experience;
 
 # Get cities and states when necessary, like register and edit profile
 Route::get('/cidades/{estado_id}', function (Request $request) {
     $estado_id = $request->estado_id;
-    $cities    = Cidade::where('estado_id', "=", $estado_id)->get()->toArray();
-    return response()->json($cities);
+    $cities    = Cidade::where('estado_id', "=", $estado_id)->orderBy('nome')->get()->toArray();
+return response()->json($cities);
 });
 
 # Routes grouped by name "app"
@@ -32,6 +33,7 @@ Route::name('app.')->group( function () {
     # Redirect user to login view and authenticate
     Route::get('/login',   [LoginController::class, 'index'])->name("login");
     Route::post('/login',  [LoginController::class, 'store'])->name('login');
+
     Route::get('/logout',  [LoginController::class, 'logout'])->name('logout');
 
     # Make search
@@ -45,12 +47,24 @@ Route::name('app.')->group( function () {
         })->name('edit-profile');
 
         Route::get('/create-profile', function (Request $request) {
+
             $user = Auth::user();
             $array_name = explode(" ", $user->name);
+            $experiences = Experience::where('user_id', Auth::user()->id)->orderBy('created_at')->get();
+
+            $test = Carbon\Carbon::parse($experiences[0]->initial_date);
+            $tes2 = Carbon\Carbon::parse($experiences[0]->final_date);
+
+            dd($test->diff($tes2), Carbon\Carbon::now()->diff($test));
+            // var_dump(Carbon\Carbon::parse($experience->initial_date)->format('M/Y'));
 
             // If already create profile, return "not found" view
             if(!$user->create_profile) {
-                return view('user.profile', ['user' => $user, 'firstname' => $array_name[0]]);
+                return view('user.profile', [
+                    'user' => $user,
+                    'firstname' => $array_name[0],
+                    'experiences' => $experiences
+                ]);
             } else {
                 return route('not-found');
             }

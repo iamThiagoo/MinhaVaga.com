@@ -29,7 +29,7 @@ return new class extends Migration
 
             $table->boolean('status');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-
+            $table->timestamp('update_at')->default(DB::raw('CURRENT_TIMESTAMP on UPDATE CURRENT_TIMESTAMP'));
         });
     }
 

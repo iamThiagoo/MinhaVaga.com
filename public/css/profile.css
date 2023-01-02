@@ -66,6 +66,18 @@
     transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
 }
 
+#type_job {
+    height: 44px;
+    margin: 0px 0px 20px 0;
+    width: 100%;
+    background-color: #e5e6e7;
+    border-radius: 0.5rem !important;
+    padding: 0 .5rem;
+    border: 2px solid transparent;
+    font-size: 1rem;
+    transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+}
+
 
 .input-group input:hover, .input-group input:focus, .input-group:hover input,
 .input-group > textarea:hover, .input-group > textarea:focus, .input-group:hover > textarea

@@ -32,10 +32,6 @@ class TypeJobSeeder extends Seeder
         ]);
 
         DB::table('type_job')->insert([
-            'name' => 'Aprendiz'
-        ]);
-
-        DB::table('type_job')->insert([
             'name' => 'Autônomo'
         ]);
 

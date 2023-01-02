@@ -30,7 +30,7 @@ class UserSeeder extends Seeder
             'cidade_id' => 3945,  // Caxias do Suk
             'estado_id' => 23,    // RS
             'email_verified_at' => now(),
-            'remember_token' => Str::random(10),
+            'remember_token' => Str::random(10)
         ]);
 
         # Insert 10 users on DB

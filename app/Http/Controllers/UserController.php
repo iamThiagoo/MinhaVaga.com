@@ -20,15 +20,13 @@ class UserController extends Controller
             'telefone'  => 'required|max:15',
             'estado'    => 'required|integer',
             'cidade'    => 'required|integer',
-            'password'  => 'required',
+            'password'  => 'required'
         ]);
-
-        $birthday = date("Y-m-d", strtotime($validated['birthday']));
 
         $user = User::create([
             'name'      => $validated['name'],
             'email'     => $validated['email'],
-            'birthday'  => $birthday,
+            'birthday'  => date("Y-m-d", strtotime($validated['birthday'])),
             'cpf'       => $validated['cpf'],
             'phone'     => $validated['telefone'],
             'password'  => bcrypt($validated['password']),
@@ -37,8 +35,6 @@ class UserController extends Controller
             'slug'      => Str::slug($validated['name'] . "-" . Str::random(10)),
             'create_profile' => false
         ]);
-
-        $user->save();
 
         Auth::login($user);
         return redirect(route('app.create.profile'));

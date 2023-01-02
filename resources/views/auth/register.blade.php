@@ -71,7 +71,7 @@
                 @enderror
                 <select name="estado" id="estado" value="{{ old("estado") }}" required>
                     <option value="">Selecione o seu estado</option>
-                    @foreach (App\Models\Estado::all() as $estado)
+                    @foreach (App\Models\Estado::all()->sortBy("nome") as $estado)
                         <option name="{{ $estado->nome }}" value="{{ $estado->id }}">{{ $estado->nome }}</option>
                     @endforeach
                 </select>

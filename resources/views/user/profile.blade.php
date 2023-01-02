@@ -41,9 +41,21 @@
                             <p>+</p>
                         </div>
 
-                        <div>
-                            <p>Teste</p>
-                        </div>
+                        @if(count($experiences) > 0)
+                            @foreach($experiences as $experience)
+                            <div class="d-flex my-3 gap-4">
+                                <div>
+                                    <img width="60px" src="https://icons.veryicon.com/png/o/miscellaneous/zr_icon/company-23.png">
+                                </div>
+                                <div>
+                                    <h2 style="font-size: 18px; padding: 0;">{{ $experience->name }}</h2>
+                                    <p class="mt-1" style="font-size: 13px">{{ Carbon\Carbon::parse($experience->initial_date)->format('M/Y') }} - {{ Carbon\Carbon::parse($experience->final_date)->format('M/Y') }} (1 ano)</p>
+                                    <p style="font-size: 14px">{{ $experience->funcao }}</p>
+                                </div>
+                            </div>
+                            @endforeach
+                        @endif
+
                     </div>
                     <div class="btn-add-group d-flex w-100 justify-content-between">
                         <p>Adicionar Formação Acadêmica</p>
@@ -90,10 +102,12 @@
                             <input type="text" name="empresa">
                         </div>
 
-                        <div class="input-group flex-column mb-4">
-                            <label for="">Tipo da vaga</label>
-                            <input type="text" name="type_job">
-                        </div>
+                        <select name="type_job" id="type_job" value="{{ old("type_job") }}">
+                            <option value="">Selecione o tipo da vaga</option>
+                            @foreach (App\Models\Typejob::all() as $type_job)
+                                <option name="{{ $type_job->name }}" value="{{ $type_job->id }}">{{ $type_job->name }}</option>
+                            @endforeach
+                        </select>
 
                         <div class="mb-4">
                             <div class="gap-3 date-experience">
@@ -102,8 +116,8 @@
                                     <input type="date" name="initial_date">
                                 </div>
                                 <div class="input-group flex-column">
-                                    <label for="last_date">Data de Término</label>
-                                    <input type="date" name="last_date">
+                                    <label for="final_date">Data de Término</label>
+                                    <input type="date" name="final_date">
                                 </div>
                             </div>
                             <div class="mt-3 current-work-container">
